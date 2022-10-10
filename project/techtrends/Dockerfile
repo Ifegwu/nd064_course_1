@@ -15,6 +15,7 @@ RUN pip install -r requirements.txt
 # copy all the files from the current directory to the container working directory (e.g. `/app`)
 COPY . /app
 
+RUN cd /app
 # Initialize the database
 RUN python3 init_db.py
 
