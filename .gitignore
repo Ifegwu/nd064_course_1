@@ -5,3 +5,4 @@
 .myvnenv/
 __pycache__/
 .vagrant/
+/project/techtrends/.env
