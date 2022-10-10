@@ -16,7 +16,7 @@ RUN pip install -r requirements.txt
 COPY . /app
 
 # Initialize the database
-RUN python init_db.py
+RUN python3 init_db.py
 
 # expose the port 3111
 EXPOSE 3111 
