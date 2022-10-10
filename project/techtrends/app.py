@@ -1,7 +1,8 @@
 import sqlite3
-
+import os
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
+import logging
 
 # Function to get a database connection.
 # This function connects to database with the name `database.db`
@@ -16,11 +17,13 @@ def get_post(post_id):
     post = connection.execute('SELECT * FROM posts WHERE id = ?',
                         (post_id,)).fetchone()
     connection.close()
+    app.logger.info(f"{post} succesfully fetch")
     return post
 
 # Define the Flask application
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'your secret key'
+IS_DEV = app.env == 'development'  # FLASK_ENV env. variable
 
 # Define the main route of the web application 
 @app.route('/')
@@ -28,6 +31,7 @@ def index():
     connection = get_db_connection()
     posts = connection.execute('SELECT * FROM posts').fetchall()
     connection.close()
+    app.logger.info("posts succefully fetch")
     return render_template('index.html', posts=posts)
 
 # Define how each individual article is rendered 
@@ -36,13 +40,16 @@ def index():
 def post(post_id):
     post = get_post(post_id)
     if post is None:
-      return render_template('404.html'), 404
+        app.logger.info("404 page return")
+        return render_template('404.html'), 404
     else:
-      return render_template('post.html', post=post)
+        app.logger.info("posts request successful")
+        return render_template('post.html', post=post)
 
 # Define the About Us page
 @app.route('/about')
 def about():
+    app.logger.info("about request successful")
     return render_template('about.html')
 
 # Define the post creation functionality 
@@ -62,9 +69,38 @@ def create():
             connection.close()
 
             return redirect(url_for('index'))
-
+    app.logger.info("title and content successful created")
     return render_template('create.html')
+
+@app.route('/healthz')
+def healthCheck():
+    response = app.response_class(
+        response=json.dumps({"result": "OK - healthy"}),
+        status=200,
+        mimetype='application/json'
+    )
+    app.logger.info("status request successful")
+    return response
+
+@app.route("/metrics")
+def metrics():
+    connection = get_db_connection()
+    posts = connection.execute('SELECT Count(*) FROM posts').fetchall()
+    if posts is None:
+        raise ValueError("No post found")
+    post_count = posts[0][0]
+    response = app.response_class(
+        response=json.dumps({"db_connection_count": 1, "post_count": post_count}),
+        status=200,
+        mimetype='application/json'
+    )
+    connection.close()
+    app.logger.info("post request metrics successful")
+    return response
 
 # start the application on port 3111
 if __name__ == "__main__":
-   app.run(host='0.0.0.0', port='3111')
+    assert os.path.exists('.env')  # for other environment variables...
+    os.environ['FLASK_ENV'] = 'development'  # HARD CODE since default is production
+    logging.basicConfig(filename='app.log', level=logging.DEBUG)
+    app.run(host='0.0.0.0', port='3111', debug=True)

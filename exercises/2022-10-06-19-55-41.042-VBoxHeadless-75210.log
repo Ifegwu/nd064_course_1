@@ -1,0 +1,12 @@
+Log created: 2022-10-06T19:55:41.429371000Z
+Process ID:  75210 (0x125ca)
+Parent PID:  74552 (0x12338)
+Executable:  /usr/lib/virtualbox/VBoxHeadless
+Arg[0]: /usr/lib/virtualbox/VBoxHeadless
+Arg[1]: --comment
+Arg[2]: exercises_default_1665059199834_59931
+Arg[3]: --startvm
+Arg[4]: da1c7c33-7a3d-4a4d-a42b-c3ca1539f4f5
+Arg[5]: --vrde
+Arg[6]: config
+AddRef: illegal refcnt=3221225469 state=2
