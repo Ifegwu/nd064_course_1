@@ -7,7 +7,6 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app
 
-RUN apk update && apk upgrade
 RUN apk add --no-cache libsqlite~=3.27.2-3+deb10u2
 RUN apk add --no-cache libsqlite3-dev
 
