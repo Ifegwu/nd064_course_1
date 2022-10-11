@@ -5,15 +5,13 @@ LABEL  maintainer="Daniel Agbanyim"
 ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1 
 
-WORKDIR /app
+# copy all the files from the current directory to the container working directory (e.g. `/app`)
+COPY . /app
 
-COPY requirements.txt requirements.txt
+WORKDIR /app
 
 # install dependencies
 RUN pip install -r requirements.txt
-
-# copy all the files from the current directory to the container working directory (e.g. `/app`)
-COPY . /app
 
 # expose the port 3111
 EXPOSE 3111 
