@@ -11,8 +11,8 @@ COPY . /app
 WORKDIR /app
 # install dependencies
 RUN pip install -r requirements.txt
-RUN pwd && ll -a
-
+RUN pwd
+RUN ls
 # expose the port 3111
 EXPOSE 3111 
 
