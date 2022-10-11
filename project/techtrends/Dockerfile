@@ -6,7 +6,6 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1 
 
 # copy all the files from the current directory to the container working directory (e.g. `/app`)
-COPY init_db.py /app
 COPY . /app
 
 WORKDIR /app
