@@ -1,5 +1,5 @@
 # use the python base image
-FROM python:3.8-slim-buster
+FROM python:3.8-alpine
 LABEL  maintainer="Daniel Agbanyim"
 
 ENV PYTHONDONTWRITEBYTECODE 1
