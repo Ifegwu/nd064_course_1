@@ -11,7 +11,8 @@ COPY . /app
 WORKDIR /app
 # install dependencies
 RUN pip install -r requirements.txt
-RUN python3 init_db.py
+RUN ls -ld /app
+RUN python3 /app/init_db.py
 
 # expose the port 3111
 EXPOSE 3111 
