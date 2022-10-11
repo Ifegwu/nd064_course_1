@@ -12,7 +12,7 @@ WORKDIR /app
 # install dependencies
 RUN pip install -r requirements.txt
 RUN pwd
-RUN ll 
+RUN ll .
 RUN ls techtrends
 # expose the port 3111
 EXPOSE 3111 
