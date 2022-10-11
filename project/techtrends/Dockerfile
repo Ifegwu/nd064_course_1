@@ -12,7 +12,7 @@ WORKDIR /app
 # install dependencies
 RUN pip install -r requirements.txt
 RUN pwd
-RUN ls
+RUN python3 /techtrends/init_db.py
 # expose the port 3111
 EXPOSE 3111 
 
