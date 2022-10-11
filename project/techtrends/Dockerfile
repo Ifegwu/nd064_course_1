@@ -7,7 +7,6 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app
 
-RUN apk add --no-cache libsqlite3-0
 RUN apk add --no-cache libsqlite3-dev
 
 COPY requirements.txt requirements.txt
