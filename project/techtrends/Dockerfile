@@ -7,8 +7,6 @@ ENV PYTHONUNBUFFERED 1
 
 WORKDIR /app
 
-RUN apk add --no-cache libsqlite3-dev
-
 COPY requirements.txt requirements.txt
 
 # install dependencies
@@ -18,8 +16,8 @@ RUN pip install -r requirements.txt
 COPY . /app
 
 RUN cd /app
-# Initialize the database
-RUN python3 init_db.py
+# # Initialize the database
+# RUN python3 init_db.py
 
 # expose the port 3111
 EXPOSE 3111 
