@@ -102,5 +102,4 @@ def metrics():
 if __name__ == "__main__":
     assert os.path.exists('.env')  # for other environment variables...
     os.environ['FLASK_ENV'] = 'development'  # HARD CODE since default is production
-    logging.basicConfig(filename='app.log', level=logging.DEBUG)
     app.run(host='0.0.0.0', port='3111', debug=True)

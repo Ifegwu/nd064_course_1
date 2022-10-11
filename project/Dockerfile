@@ -6,13 +6,13 @@ ENV PYTHONDONTWRITEBYTECODE 1
 ENV PYTHONUNBUFFERED 1 
 
 # copy all the files from the current directory to the container working directory (e.g. `/app`)
-COPY . /app
+COPY ./techtrends /app
 
 WORKDIR /app
 # install dependencies
 RUN pip install -r requirements.txt
 
-RUN cd techtrends && python3 init_db.py
+RUN python3 init_db.py
 
 # expose the port 3111
 EXPOSE 3111 
