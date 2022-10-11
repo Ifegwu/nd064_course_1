@@ -11,10 +11,9 @@ COPY . /app
 WORKDIR /app
 # install dependencies
 RUN pip install -r requirements.txt
-RUN pwd
-RUN ls
+
 RUN cd techtrends && python3 init_db.py
-RUN cd ..
+
 # expose the port 3111
 EXPOSE 3111 
 
