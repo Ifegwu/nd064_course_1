@@ -11,7 +11,7 @@ spec:
   - port: {{ .Values.service.port }}
     protocol: {{ .Values.service.protocol }}
     targetPort: {{ .Values.service.targetPort }}
-    nodePort: 30007
+    nodePort: {{ .Values.service.nodePort }}
   selector:
     app: techtrends
     tag: latest

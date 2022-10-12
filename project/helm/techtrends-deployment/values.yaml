@@ -6,6 +6,7 @@ service:
   targetPort: 3111
   protocol: TCP
   type: ClusterIP
+  nodePort: 30007
 
 image:
   repository: techtrends 
