@@ -5,7 +5,7 @@ service:
   port: 4111
   targetPort: 3111
   protocol: TCP
-  type: ClusterIP
+  type: nodePort
   nodePort: 30007
 
 image:

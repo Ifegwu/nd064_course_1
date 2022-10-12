@@ -15,4 +15,4 @@ spec:
   selector:
     app: techtrends
     tag: latest
-  type: ClusterIP
+  type: NodePort
