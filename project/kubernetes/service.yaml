@@ -11,6 +11,7 @@ spec:
   - port: 4111
     protocol: TCP
     targetPort: 3111
+    nodePort: 30007
   selector:
     app: techtrends
     tag: devops
