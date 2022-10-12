@@ -9,8 +9,24 @@ docker run -d -p 7111:3111 techtrends
 
 ## Docker commands used to get the application logs
 
-# TODO: insert the docker logs command
+docker run -p 7111:3111 techtrends
 
 ## Logs from the container running the TechTrends application
 
-# TODO: paste logs from the Docker container
+- Serving Flask app 'app' (lazy loading)
+- Environment: development
+- Debug mode: on
+- Running on all addresses.
+  WARNING: This is a development server. Do not use it in a production deployment.
+- Running on http://172.17.0.2:3111/ (Press CTRL+C to quit)
+- Restarting with stat
+- Debugger is active!
+- Debugger PIN: 711-278-925
+  [2022-10-11 21:59:29,723] INFO in app: posts succefully fetch
+  172.17.0.1 - - [11/Oct/2022 21:59:29] "GET / HTTP/1.1" 200 -
+  172.17.0.1 - - [11/Oct/2022 21:59:30] "GET /static/css/main.css HTTP/1.1" 304 -
+  172.17.0.1 - - [11/Oct/2022 21:59:30] "GET /favicon.ico HTTP/1.1" 404 -
+  [2022-10-11 21:59:32,611] INFO in app: <sqlite3.Row object at 0x7f444e1c7330> succesfully fetch
+  [2022-10-11 21:59:32,612] INFO in app: posts request successful
+  172.17.0.1 - - [11/Oct/2022 21:59:32] "GET /1 HTTP/1.1" 200 -
+  172.17.0.1 - - [11/Oct/2022 21:59:32] "GET /static/css/main.css HTTP/1.1" 304 -
