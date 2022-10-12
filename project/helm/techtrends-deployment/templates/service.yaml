@@ -8,10 +8,10 @@ metadata:
   namespace: {{ .Values.namespace.name }}
 spec:
   ports:
-  - port: {{ .Values.service.port }}
-    protocol: {{ .Values.service.protocol }}
-    targetPort: {{ .Values.service.targetPort }}
-    nodePort: {{ .Values.service.nodePort }}
+    - nodePort: {{ .Values.service.nodePort}}
+      port: {{ .Values.service.port }}
+      protocol: {{ .Values.service.protocol }}
+      targetPort: {{ .Values.service.targetPort }}
   selector:
     app: techtrends
     tag: latest
