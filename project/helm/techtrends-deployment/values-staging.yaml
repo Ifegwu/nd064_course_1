@@ -3,7 +3,7 @@ namespace:
  
 service:
   port: 5111
-  nodePort: 30007
+  nodePort: 30011
 
 replicaCount: 3
 
