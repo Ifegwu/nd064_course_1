@@ -1,5 +1,6 @@
 import sqlite3
 import os
+import sys
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
 import logging
@@ -100,6 +101,25 @@ def metrics():
 
 # start the application on port 3111
 if __name__ == "__main__":
+    # setting environment variable
     assert os.path.exists('.env')  # for other environment variables...
     os.environ['FLASK_ENV'] = 'development'  # HARD CODE since default is production
+    
+
+    # format output
+    log_format = '%(asctime)s %(levelname)s %(message)s' 
+    format_output = logging.Formatter(log_format)
+    
+    # set logger to handle STDOUT and STDERR 
+    stdout_handler = logging.StreamHandler(sys.stdout) # stdout handler
+    stdout_handler.setLevel(logging.DEBUG)
+    stdout_handler.setFormatter(format_output) # return stdout_handler
+    stderr_handler =  logging.StreamHandler(sys.stderr) # stderr handler 
+    stdout_handler.setLevel(logging.DEBUG)
+    stderr_handler.setFormatter(format_output) # return stderr_handler
+    handlers = [stderr_handler, stdout_handler]
+
+    logging.basicConfig(datefmt='%Y-%m-%d %H:%M:%S', handlers=handlers)
+    # logging.basicConfig(format=format_output, level=logging.DEBUG, datefmt='%Y-%m-%d %H:%M:%S', handlers=handlers)
+    
     app.run(host='0.0.0.0', port='3111', debug=True)
