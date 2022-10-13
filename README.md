@@ -42,7 +42,7 @@ Below you can examine the main components of the firsts prototype of the applica
 #### Logs from the container running the TechTrends application
 
 ```
-~/project/nd064_course_1$ docker logs -f $$(docker ps | grep techtrends | tr " " "" | tail -1)
+~/project/nd064_course_1$ docker logs -f $(docker ps | grep techtrends | tr " " "" | tail -1)
 ```
 ```
 - Serving Flask app 'app' (lazy loading)
