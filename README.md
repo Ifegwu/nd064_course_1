@@ -167,4 +167,12 @@ localhost:/home/vagrant # kubectl apply -f helm-techtrends-prod.yaml
 ![4b_argocd-techtrends-staging](https://user-images.githubusercontent.com/9282421/195646554-e66d03a6-7cdd-4672-b61a-f507738f020d.png)
 ![4c_argocd-techtrends-prod](https://user-images.githubusercontent.com/9282421/195646584-cd7dd199-f972-47ee-9ae5-2749466b2344.png)
 
+#### Helpful Resources
+* [Kubernetes Components](https://kubernetes.io/docs/concepts/overview/components/)
+* [8 common Docker commands beginners should know](https://www.techtarget.com/searchitoperations/tip/8-common-Docker-commands-beginners-should-know)
+* [Getting started with Docker and Kubernetes: A beginners guide](https://www.educative.io/blog/docker-kubernetes-beginners-guide)
+* [10 Helm Tutorials to Start your Kubernetes Journey](https://www.techtarget.com/searchitoperations/tip/8-common-Docker-commands-beginners-should-know)
+* [Logging in Python](https://medium.com/analytics-vidhya/logging-in-python-mattias-blog-d91cebe9e02c)
+* [Python stdin stderr logging](https://deepumohan.com/tech/python-stdin-stderr-logging/)
+* [Argo CD - Declarative GitOps CD for Kubernetes](https://argo-cd.readthedocs.io/en/stable/getting_started/)
 
