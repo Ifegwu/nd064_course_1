@@ -11,8 +11,8 @@ spec:
   - port: 4111
     protocol: TCP
     targetPort: 3111
-    nodePort: 30007
+    nodePort: 30013
   selector:
     app: techtrends
     tag: devops
-  type: ClusterIP
+  type: NodePort
