@@ -176,3 +176,4 @@ localhost:/home/vagrant # kubectl apply -f helm-techtrends-prod.yaml
 * [Python stdin stderr logging](https://deepumohan.com/tech/python-stdin-stderr-logging/)
 * [Argo CD - Declarative GitOps CD for Kubernetes](https://argo-cd.readthedocs.io/en/stable/getting_started/)
 
+## For More Optomisation / Automation...
